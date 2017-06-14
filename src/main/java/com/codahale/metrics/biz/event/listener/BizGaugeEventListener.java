@@ -19,6 +19,9 @@ import java.util.Queue;
 import java.util.SortedMap;
 import java.util.concurrent.LinkedBlockingDeque;
 
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Component;
+
 import com.codahale.metrics.Gauge;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.biz.MetricsFactory;
@@ -26,19 +29,29 @@ import com.codahale.metrics.biz.event.BizEventPoint;
 import com.codahale.metrics.biz.event.BizGaugeEvent;
 import com.codahale.metrics.biz.filter.MetricNamedFilter;
 
+@Component
 public class BizGaugeEventListener extends BizMetricEventListener<BizGaugeEvent> {
 
 	protected Queue<Long> queue = new LinkedBlockingDeque<Long>();
 
 	protected MetricNamedFilter filter = new MetricNamedFilter();
 	
+	protected MetricRegistry metricRegistry;
+	
+	public MetricRegistry getMetricRegistry() {
+		return metricRegistry;
+	}
+	
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		if(getRegistry() == null){
-			setRegistry(MetricsFactory.getGaugeMetricRegistry());
+		if(getMetricsFactory() != null){
+			metricRegistry = getMetricsFactory().getRegistry();
+		} else {
+			metricRegistry = MetricsFactory.getMeterMetricRegistry();
 		}
 	}
 	
+	@Async
 	@Override
 	@SuppressWarnings("rawtypes")
 	public void onApplicationEvent(BizGaugeEvent event) {
@@ -48,9 +61,9 @@ public class BizGaugeEventListener extends BizMetricEventListener<BizGaugeEvent>
 		
 		queue.add(data.getValue());
 		
-		String metrics_key = MetricRegistry.name(event.getSource().getClass(), data.getMetric());
+		String metrics_key = MetricRegistry.name(event.getSource().getClass(), data.getName());
 		filter.setMetrics(metrics_key);
-		SortedMap<String, Gauge> gauges = getRegistry().getGauges(filter);
+		SortedMap<String, Gauge> gauges = getMetricRegistry().getGauges(filter);
 		boolean notRegister =  (gauges == null || gauges.isEmpty());
 		if(notRegister){
 			
@@ -69,7 +82,7 @@ public class BizGaugeEventListener extends BizMetricEventListener<BizGaugeEvent>
 	        };
 	        
 			//注册到容器中
-	        getRegistry().register(metrics_key, gauge);
+	        getMetricRegistry().register(metrics_key, gauge);
 			
 		}
 		

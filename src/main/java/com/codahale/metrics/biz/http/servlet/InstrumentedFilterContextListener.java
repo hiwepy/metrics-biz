@@ -7,7 +7,7 @@ public class InstrumentedFilterContextListener extends com.codahale.metrics.serv
 	
     @Override
     protected MetricRegistry getMetricRegistry() {
-        return MetricsFactory.DEFAULT_REGISTRY;
+        return MetricsFactory.getContextMetricRegistry();
     }
 
 }

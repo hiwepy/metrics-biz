@@ -17,18 +17,18 @@ package com.codahale.metrics.biz.event.listener;
 
 import java.util.concurrent.TimeUnit;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 
-import com.codahale.metrics.MetricRegistry;
+import com.codahale.metrics.biz.MetricsFactory;
 
 public abstract class BizMetricEventListener<E extends ApplicationEvent> implements ApplicationListener<E>, InitializingBean {
 
-	/**
-     * 实例化一个registry，最核心的一个模块，相当于一个应用程序的metrics系统的容器，维护一个Map
-     */
-	protected MetricRegistry registry;
+	@Resource
+	protected MetricsFactory metricsFactory;
 	
 	protected long initialDelay = 0; 
 	
@@ -40,12 +40,12 @@ public abstract class BizMetricEventListener<E extends ApplicationEvent> impleme
 	public void afterPropertiesSet() throws Exception {
 	}
 	
-	public MetricRegistry getRegistry() {
-		return registry;
+	public MetricsFactory getMetricsFactory() {
+		return metricsFactory;
 	}
 
-	public void setRegistry(MetricRegistry registry) {
-		this.registry = registry;
+	public void setMetricsFactory(MetricsFactory metricsFactory) {
+		this.metricsFactory = metricsFactory;
 	}
 
 	public long getInitialDelay() {

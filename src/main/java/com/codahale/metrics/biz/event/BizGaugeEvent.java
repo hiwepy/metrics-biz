@@ -15,4 +15,12 @@ public class BizGaugeEvent extends BizEvent<BizEventPoint> {
 		super(source, bind);
 	}
 	
+	public BizGaugeEvent(Object source, String name, Long value) {
+		super(source, new BizEventPoint(name, null, value));
+	}
+	
+	public BizGaugeEvent(Object source, String name, String message, Long value) {
+		super(source, new BizEventPoint(name, message, value));
+	}
+	
 }

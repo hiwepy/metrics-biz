@@ -1,5 +1,7 @@
 package com.codahale.metrics.biz.event;
 
+import java.util.Map;
+
 /**
  * 
  * @className	： BizStatusEvent
@@ -13,6 +15,18 @@ public class BizMeterEvent extends BizEvent<BizEventPoint> {
 
 	public BizMeterEvent(Object source, BizEventPoint bind) {
 		super(source, bind);
+	}
+	
+	public BizMeterEvent(Object source, String name) {
+		super(source, new BizEventPoint(name, null));
+	}
+	
+	public BizMeterEvent(Object source, String name, String message) {
+		super(source, new BizEventPoint(name, message));
+	}
+	
+	public BizMeterEvent(Object source, String name, String message, Map<String, Object> data) {
+		super(source, new BizEventPoint(name, message, data));
 	}
 	
 }

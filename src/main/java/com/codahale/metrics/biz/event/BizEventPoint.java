@@ -2,6 +2,7 @@ package com.codahale.metrics.biz.event;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import com.codahale.metrics.biz.utils.SystemClock;
 
@@ -28,7 +29,7 @@ public class BizEventPoint {
 	/**
 	 * 度量名称
 	 */
-	protected String metric;
+	protected String name;
 	/**
 	 * 当前事件发生时间
 	 */
@@ -46,37 +47,43 @@ public class BizEventPoint {
 	 */
 	protected Map<String, Object> data;
 	
-	public BizEventPoint(String uid, String message) {
-		this(null, uid, message);
+	public BizEventPoint(String name, String message) {
+		this(null, name, message);
 	}
 	
-	public BizEventPoint(BizEventPoint prev, String uid, String message) {
-		this(prev, uid, SystemClock.now(), message);
+	public BizEventPoint(String name, String message, Long value) {
+		this(null, name, message);
+		this.value = value;
 	}
 	
-	public BizEventPoint(String uid, long timestamp, String message) {
-		this(null, uid, timestamp, message);
+	public BizEventPoint(BizEventPoint prev, String name, String message) {
+		this(prev, name, SystemClock.now(), message);
 	}
 	
-	public BizEventPoint(BizEventPoint prev, String uid, long timestamp, String message) {
-		this(prev, uid, timestamp, message, null);
+	public BizEventPoint(String name, long timestamp, String message) {
+		this(null, name, timestamp, message);
 	}
 	
-	public BizEventPoint(String uid, String message, Map<String, Object> data) {
-		this(null, uid, message, data);
+	public BizEventPoint(BizEventPoint prev, String name, long timestamp, String message) {
+		this(prev, name, timestamp, message, null);
 	}
 	
-	public BizEventPoint(BizEventPoint prev, String uid, String message, Map<String, Object> data) {
-		this(prev, uid, SystemClock.now(), message, data);
+	public BizEventPoint(String name, String message, Map<String, Object> data) {
+		this(null, name, message, data);
 	}
 	
-	public BizEventPoint(String uid, long timestamp, String message, Map<String, Object> data) {
-		this(null, uid, SystemClock.now(), message, data);
+	public BizEventPoint(BizEventPoint prev, String name, String message, Map<String, Object> data) {
+		this(prev, name, SystemClock.now(), message, data);
 	}
 	
-	public BizEventPoint(BizEventPoint prev, String uid, long timestamp, String message, Map<String, Object> data) {
+	public BizEventPoint(String name, long timestamp, String message, Map<String, Object> data) {
+		this(null, name, SystemClock.now(), message, data);
+	}
+	
+	public BizEventPoint(BizEventPoint prev, String name, long timestamp, String message, Map<String, Object> data) {
 		this.prev = prev;
-		this.uid = uid;
+		this.name = name;
+		this.uid = UUID.randomUUID().toString();
 		this.timestamp = timestamp;
 		this.message = message;
 		this.data = data == null ? new HashMap<String, Object>() : data;
@@ -98,12 +105,12 @@ public class BizEventPoint {
 		this.uid = uid;
 	}
 	
-	public String getMetric() {
-		return metric;
+	public String getName() {
+		return name;
 	}
 
-	public void setMetric(String metric) {
-		this.metric = metric;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public long getTimestamp() {

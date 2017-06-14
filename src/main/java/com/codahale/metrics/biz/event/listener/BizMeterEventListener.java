@@ -15,29 +15,41 @@
  */
 package com.codahale.metrics.biz.event.listener;
 
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Component;
+
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.biz.MetricsFactory;
 import com.codahale.metrics.biz.event.BizEventPoint;
 import com.codahale.metrics.biz.event.BizMeterEvent;
-
+@Component
 public class BizMeterEventListener extends BizMetricEventListener<BizMeterEvent> {
 
+	protected MetricRegistry metricRegistry;
+	
+	public MetricRegistry getMetricRegistry() {
+		return metricRegistry;
+	}
+	
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		if(getRegistry() == null){
-			setRegistry(MetricsFactory.getMeterMetricRegistry());
+		if(getMetricsFactory() != null){
+			metricRegistry = getMetricsFactory().getRegistry();
+		} else {
+			metricRegistry = MetricsFactory.getMeterMetricRegistry();
 		}
 	}
 	
+	@Async
 	@Override
 	public void onApplicationEvent(BizMeterEvent event) {
 		
 		//获取绑定数据对象
 		BizEventPoint data = event.getBind();
 		//计算当前事件的唯一度量名称
-		String name = MetricRegistry.name(event.getSource().getClass(), data.getMetric());
+		String name = MetricRegistry.name(event.getSource().getClass(), data.getName());
 		//增加一次计数
-		getRegistry().meter(name).mark();
+		getMetricRegistry().meter(name).mark();
 		
 	}
 

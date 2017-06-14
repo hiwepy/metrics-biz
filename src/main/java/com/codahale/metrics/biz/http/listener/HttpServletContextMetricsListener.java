@@ -25,7 +25,7 @@ public class HttpServletContextMetricsListener implements ServletContextAttribut
 	
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
-		this.registry = MetricsFactory.getServletContextMetricRegistry();
+		this.registry = MetricsFactory.getContextMetricRegistry();
 		event.getServletContext().setAttribute(MetricsFactory.SERVLET_CONTEXT_METRIC_REGISTRY, this.registry);
 	}
 	
