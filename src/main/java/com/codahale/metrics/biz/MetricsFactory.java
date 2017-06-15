@@ -142,6 +142,23 @@ public class MetricsFactory implements InitializingBean, DisposableBean {
 		return (T) ret;
 	 }
 
+	/**
+	 * 实例化一个Gauge<T>
+	 */
+	public <T> Gauge<T> getGauge(MetricSupplier<Gauge> supplier, Class<?> clazz, String... names) {
+		String key = MetricRegistry.name(clazz , names);
+		Metric ret = COMPLIED_METRICS.get(key);
+		if (ret != null) {
+			return (Gauge<T>) ret;
+		}
+		ret = this.getRegistry().gauge(key, supplier);
+		Metric existing = COMPLIED_METRICS.putIfAbsent(key, ret);
+		if (existing != null) {
+			ret = existing;
+		}
+		return (Gauge<T>) ret;
+	}
+	
 	 public <T extends Metric> T register(String name, T metric) throws IllegalArgumentException {
 		 return this.getRegistry().register(name, metric);
 	 }
