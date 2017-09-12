@@ -7,14 +7,12 @@ import java.util.Enumeration;
 import com.codahale.metrics.health.HealthCheck;
 /**
  * 
- *@类名称		： ServiceOnlineCheck.java
- *@类描述		：
- *@创建人		：wandalong
- *@创建时间	：2017年6月9日 下午4:46:11
- *@修改人		：
- *@修改时间	：
- *@版本号		: v1.0
- *http://blog.csdn.net/paullmq/article/details/9032631
+ * @className	： ServiceOnlineCheck
+ * @description	： TODO(描述这个类的作用)
+ * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @date		： 2017年9月12日 下午10:46:35
+ * @version 	V1.0
+ * http://blog.csdn.net/paullmq/article/details/9032631
  */
 public class ServiceOnlineCheck extends HealthCheck {
 
