@@ -9,7 +9,7 @@ import com.codahale.metrics.health.HealthCheck;
  * 
  * @className	： ServiceOnlineCheck
  * @description	： TODO(描述这个类的作用)
- * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
  * @date		： 2017年9月12日 下午10:46:35
  * @version 	V1.0
  * http://blog.csdn.net/paullmq/article/details/9032631

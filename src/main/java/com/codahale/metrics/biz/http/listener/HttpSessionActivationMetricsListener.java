@@ -10,7 +10,7 @@ import com.codahale.metrics.biz.MetricsFactory;
  * 
  * @className	： HttpSessionActivationMetricsListener
  * @description	：Session激活钝化速率监控
- * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
  * @date		： 2017年6月11日 下午2:07:55
  * @version 	V1.0
  */

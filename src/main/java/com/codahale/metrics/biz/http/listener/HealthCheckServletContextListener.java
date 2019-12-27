@@ -11,7 +11,7 @@ import com.codahale.metrics.servlets.HealthCheckServlet;
  * 
  * @className	： HealthCheckServletContextListener
  * @description	： TODO(描述这个类的作用)
- * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
  * @date		： 2017年6月14日 下午12:34:42
  * @version 	V1.0
  * http://blog.csdn.net/bairrfhoinn/article/details/16848785
