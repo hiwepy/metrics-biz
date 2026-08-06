@@ -12,7 +12,7 @@ import com.codahale.metrics.biz.MetricsFactory;
 /**
  * @className	： ServletContextMetricsListener
  * @description	： ServletContext上下文属性绑定、移除、更新速率监控
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  * @date		： 2017年6月11日 下午2:19:06
  * @version 	V1.0
  */
