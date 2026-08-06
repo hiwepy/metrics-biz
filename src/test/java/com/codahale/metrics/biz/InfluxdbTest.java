@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 (https://github.com/hiwepy).
+ * Copyright (c) 2018 (https://github.com/loong10k).
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -29,7 +29,7 @@ import org.junit.Test;
  * 
  * @className	： InfluxdbTest
  * @description	：https://github.com/influxdata/influxdb-java
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  * @date		： 2017年9月12日 下午11:33:12
  * @version 	V1.0
  */
