@@ -315,7 +315,7 @@
         <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
     
 		<metrics-kafka.version>0.0.1</metrics-kafka.version>
-		<kafka-clients.version>3.9.0</kafka-clients.version>
+		<kafka-clients.version>3.9.2</kafka-clients.version>
 		<metrics-zabbix.version>0.0.5</metrics-zabbix.version>
 		<mybatis-ehcache-spring.version>0.0.1</mybatis-ehcache-spring.version>
 		<influxdb-java.version>2.25</influxdb-java.version>
