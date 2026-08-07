@@ -4,7 +4,9 @@
 
 [![Java](https://img.shields.io/badge/Java-21-orange)](https://github.com/easy-4-java/metrics-biz) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](./LICENSE)
 
-> **项目状态**：`feature/3.0.x` 版本线维护中（JDK 21）。制品尚未发布到 Maven Central，通过项目私服与 GitHub Releases 分发。
+metrics-biz 是基于 Dropwizard Metrics（metrics-core 4.1.1）的业务向辅助层。
+
+> **项目状态**：`feature/3.0.x` 版本线维护中（JDK 8）。制品尚未发布到 Maven Central，通过项目私服与 GitHub Releases 分发。
 
 ## 目录
 
