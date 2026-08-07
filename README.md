@@ -4,6 +4,8 @@
 
 [![Java](https://img.shields.io/badge/Java-8-orange)](https://github.com/easy-4-java/metrics-biz) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](./LICENSE)
 
+metrics-biz is a business-oriented helper layer on top of Dropwizard Metrics (metrics-core 4.1.1)
+
 > **Status**: maintained on the `feature/1.0.x` line (JDK 8). Artifacts are not yet published to Maven Central; they are distributed through the project's private repository and GitHub Releases.
 
 ## Table of Contents
