@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2018-present, easy-4-java (https://github.com/easy-4-java).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.codahale.metrics.biz.http.listener;
 
 import javax.servlet.http.HttpSessionAttributeListener;
@@ -7,42 +22,66 @@ import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.biz.MetricsFactory;
 
 /**
- * 
- * @className	： HttpSessionAttributeMetricsListener
- * @description	： Session属性绑定、移除、更新速率监控
+ * Servlet listener that marks Dropwizard meters for HTTP session
+ * attribute add, remove and replace events.
+ *
+ * <p>The metrics are keyed by the listener class, the servlet context
+ * path and the {@code attributeAdded} / {@code attributeRemoved} /
+ * {@code attributeReplaced} dimension so consumers can plot
+ * per-application session attribute churn.</p>
+ *
  * @author [@Loong Wan](https://github.com/loong10k)
- * @date		： 2017年6月11日 下午2:12:11
- * @version 	V1.0
+ * @since 3.0.0
  */
 public class HttpSessionAttributeMetricsListener implements HttpSessionAttributeListener {
 
-	/**
-     * 实例化一个registry，最核心的一个模块，相当于一个应用程序的metrics系统的容器，维护一个Map
+    /**
+     * Metric registry used by this listener; resolved from
+     * {@link MetricsFactory#getMetricRegistry(String)} with the logical
+     * name {@code "http-session-attribute"}.
      */
-	protected MetricRegistry registry = MetricsFactory.getMetricRegistry("http-session-attribute");
-	
-	@Override
-	public void attributeAdded(HttpSessionBindingEvent event) {
+    protected MetricRegistry registry = MetricsFactory.getMetricRegistry("http-session-attribute");
 
-		String prefix = MetricRegistry.name(this.getClass(), event.getSession().getServletContext().getContextPath(), "session", "attributeAdded" );
-		registry.meter(prefix).mark();
-		
-	}
+    /**
+     * Marks the {@code attributeAdded} meter for the current context
+     * path.
+     *
+     * @param event the HTTP session binding event.
+     */
+    @Override
+    public void attributeAdded(HttpSessionBindingEvent event) {
 
-	@Override
-	public void attributeRemoved(HttpSessionBindingEvent event) {
-		
-		String prefix = MetricRegistry.name(this.getClass(), event.getSession().getServletContext().getContextPath(), "session", "attributeRemoved" );
-		registry.meter(prefix).mark();
+        String prefix = MetricRegistry.name(this.getClass(), event.getSession().getServletContext().getContextPath(), "session", "attributeAdded" );
+        registry.meter(prefix).mark();
 
-	}
+    }
 
-	@Override
-	public void attributeReplaced(HttpSessionBindingEvent event) {
+    /**
+     * Marks the {@code attributeRemoved} meter for the current context
+     * path.
+     *
+     * @param event the HTTP session binding event.
+     */
+    @Override
+    public void attributeRemoved(HttpSessionBindingEvent event) {
 
-		String prefix = MetricRegistry.name(this.getClass(), event.getSession().getServletContext().getContextPath(), "session", "attributeReplaced" );
-		registry.meter(prefix).mark();
+        String prefix = MetricRegistry.name(this.getClass(), event.getSession().getServletContext().getContextPath(), "session", "attributeRemoved" );
+        registry.meter(prefix).mark();
 
-	}
+    }
+
+    /**
+     * Marks the {@code attributeReplaced} meter for the current context
+     * path.
+     *
+     * @param event the HTTP session binding event.
+     */
+    @Override
+    public void attributeReplaced(HttpSessionBindingEvent event) {
+
+        String prefix = MetricRegistry.name(this.getClass(), event.getSession().getServletContext().getContextPath(), "session", "attributeReplaced" );
+        registry.meter(prefix).mark();
+
+    }
 
 }
