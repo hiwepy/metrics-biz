@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2018-present, easy-4-java (https://github.com/easy-4-java).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.codahale.metrics.biz.http.listener;
 
 import javax.servlet.http.HttpSessionActivationListener;
@@ -7,34 +22,50 @@ import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.biz.MetricsFactory;
 
 /**
- * 
- * @className	： HttpSessionActivationMetricsListener
- * @description	：Session激活钝化速率监控
+ * Servlet listener that marks Dropwizard meters for HTTP session
+ * passivation and activation events.
+ *
+ * <p>The metrics are keyed by the listener class, the servlet context
+ * path and the {@code willPassivate} / {@code didActivate} dimension so
+ * consumers can plot per-application passivation rates.</p>
+ *
  * @author [@Loong Wan](https://github.com/loong10k)
- * @date		： 2017年6月11日 下午2:07:55
- * @version 	V1.0
+ * @since 3.0.0
  */
 public class HttpSessionActivationMetricsListener implements HttpSessionActivationListener {
 
-	/**
-     * 实例化一个registry，最核心的一个模块，相当于一个应用程序的metrics系统的容器，维护一个Map
+    /**
+     * Metric registry used by this listener; resolved from
+     * {@link MetricsFactory#getMetricRegistry(String)} with the logical
+     * name {@code "http-session-activation"}.
      */
-	protected MetricRegistry registry = MetricsFactory.getMetricRegistry("http-session-activation");
-	
-	@Override
-	public void sessionWillPassivate(HttpSessionEvent event) {
-		
-		String prefix = MetricRegistry.name(this.getClass(), event.getSession().getServletContext().getContextPath(), "session", "willPassivate" );
-		registry.meter(prefix).mark();
-		
-	}
+    protected MetricRegistry registry = MetricsFactory.getMetricRegistry("http-session-activation");
 
-	@Override
-	public void sessionDidActivate(HttpSessionEvent event) {
+    /**
+     * Marks the {@code willPassivate} meter for the current context
+     * path.
+     *
+     * @param event the HTTP session event.
+     */
+    @Override
+    public void sessionWillPassivate(HttpSessionEvent event) {
 
-		String prefix = MetricRegistry.name(this.getClass(), event.getSession().getServletContext().getContextPath(), "session", "didActivate" );
-		registry.meter(prefix).mark();
-		
-	}
+        String prefix = MetricRegistry.name(this.getClass(), event.getSession().getServletContext().getContextPath(), "session", "willPassivate" );
+        registry.meter(prefix).mark();
+
+    }
+
+    /**
+     * Marks the {@code didActivate} meter for the current context path.
+     *
+     * @param event the HTTP session event.
+     */
+    @Override
+    public void sessionDidActivate(HttpSessionEvent event) {
+
+        String prefix = MetricRegistry.name(this.getClass(), event.getSession().getServletContext().getContextPath(), "session", "didActivate" );
+        registry.meter(prefix).mark();
+
+    }
 
 }
