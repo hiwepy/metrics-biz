@@ -23,6 +23,7 @@ import org.influxdb.InfluxDBFactory;
 import org.influxdb.dto.BatchPoints;
 import org.influxdb.dto.Point;
 import org.influxdb.dto.Query;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -36,6 +37,7 @@ import org.junit.Test;
 public class InfluxdbTest {
 	
 	@Test
+	@Ignore("Requires live InfluxDB server at 121.43.110.87:8086 — integration test")
 	public void testName() throws Exception {
 		InfluxDB influxDB = InfluxDBFactory.connect("http://121.43.110.87:8086", "admin", "admin");
 		String dbName = "aTimeSeries";

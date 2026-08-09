@@ -368,7 +368,7 @@
             <dependency>
                 <groupId>io.dropwizard.metrics</groupId>
                 <artifactId>metrics-healthchecks</artifactId>
-                <version>${metrics.version}</version>
+                <version>4.0.1</version>
             </dependency>
             <!-- For Metrics -->
             <dependency>
