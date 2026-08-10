@@ -32,7 +32,7 @@ import com.codahale.metrics.biz.utils.SystemClock;
  * the most common combinations and assign a timestamp via
  * {@link SystemClock#now()}.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 public class BizEventPoint {

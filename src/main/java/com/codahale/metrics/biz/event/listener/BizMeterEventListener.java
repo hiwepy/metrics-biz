@@ -32,7 +32,7 @@ import com.codahale.metrics.biz.event.BizMeterEvent;
  * When no {@link MetricsFactory} is injected the listener falls back to
  * the shared meter registry.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 @Component

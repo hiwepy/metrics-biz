@@ -36,7 +36,7 @@ import com.codahale.metrics.biz.MetricsFactory;
  * and {@code attributeReplaced} &mdash; each scoped by the context
  * path.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 public class HttpServletContextMetricsListener implements ServletContextAttributeListener, ServletContextListener {

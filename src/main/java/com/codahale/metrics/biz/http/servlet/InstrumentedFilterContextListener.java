@@ -27,7 +27,7 @@ import com.codahale.metrics.biz.MetricsFactory;
  * metrics collected by the Dropwizard {@code InstrumentedFilter} under
  * the same registry as the rest of the metrics-biz components.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 public class InstrumentedFilterContextListener extends com.codahale.metrics.servlet.InstrumentedFilterContextListener {

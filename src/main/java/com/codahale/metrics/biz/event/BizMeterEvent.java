@@ -28,7 +28,7 @@ import java.util.Map;
  * variants mirror those of {@link BizCountedEvent} so publishers can
  * attach arbitrary context data to the event.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see BizEvent
  * @see BizEventPoint

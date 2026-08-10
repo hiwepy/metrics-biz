@@ -25,7 +25,7 @@ package com.codahale.metrics.biz.http.filter;
  * {@code InstrumentedFilter} and add the metrics wiring this project
  * requires.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 public class InstrumentedFilter {

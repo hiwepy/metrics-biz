@@ -31,7 +31,7 @@ import com.codahale.metrics.health.HealthCheck;
  * (DNS failure, timeout, ...) is converted into an unhealthy result
  * carrying the original error.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see <a href="http://blog.csdn.net/paullmq/article/details/9032631">Original CSDN post</a>
  */

@@ -57,7 +57,7 @@ import com.codahale.metrics.health.HealthCheckRegistry;
  * Dropwizard itself enforces inside a registry but gives callers a single
  * key space across the whole application.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see MetricRegistry
  * @see HealthCheckRegistry

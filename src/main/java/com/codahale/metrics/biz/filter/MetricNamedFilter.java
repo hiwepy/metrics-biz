@@ -28,7 +28,7 @@ import com.codahale.metrics.MetricFilter;
  * similar APIs to obtain a sub-map containing only the matching name.
  * Equality is performed via {@link String#equals(Object)}.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 public class MetricNamedFilter implements MetricFilter {

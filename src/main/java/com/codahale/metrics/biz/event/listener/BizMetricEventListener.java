@@ -40,7 +40,7 @@ import com.codahale.metrics.biz.MetricsFactory;
  * that need a periodic refresh can configure them declaratively.</p>
  *
  * @param <E> the application event type consumed by this listener.
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 public abstract class BizMetricEventListener<E extends ApplicationEvent> implements ApplicationListener<E>, InitializingBean {

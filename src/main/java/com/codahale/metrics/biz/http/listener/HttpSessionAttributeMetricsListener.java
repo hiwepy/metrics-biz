@@ -30,7 +30,7 @@ import com.codahale.metrics.biz.MetricsFactory;
  * {@code attributeReplaced} dimension so consumers can plot
  * per-application session attribute churn.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 public class HttpSessionAttributeMetricsListener implements HttpSessionAttributeListener {

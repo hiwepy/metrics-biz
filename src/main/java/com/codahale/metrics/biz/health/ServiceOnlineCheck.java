@@ -32,7 +32,7 @@ import com.codahale.metrics.health.HealthCheck;
  * performs the ICMP/echo probe and iterates over every available
  * network interface.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see <a href="http://blog.csdn.net/paullmq/article/details/9032631">Original CSDN post</a>
  */

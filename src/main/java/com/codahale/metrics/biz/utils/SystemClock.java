@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * </p>
  *
  * @author lry
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see System#currentTimeMillis()
  * @see <a href="http://git.oschina.net/yu120/sequence">Original project</a>

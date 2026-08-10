@@ -28,7 +28,7 @@ import java.util.Map;
  * associate with the event &mdash; from a bare name up to a fully
  * populated event-point with a custom data map.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see BizEvent
  * @see BizEventPoint

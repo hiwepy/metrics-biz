@@ -29,7 +29,7 @@ import com.codahale.metrics.biz.MetricsFactory;
  * path and the {@code willPassivate} / {@code didActivate} dimension so
  * consumers can plot per-application passivation rates.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 public class HttpSessionActivationMetricsListener implements HttpSessionActivationListener {

@@ -39,7 +39,7 @@ import com.codahale.metrics.biz.filter.MetricNamedFilter;
  * the same queue and {@link Gauge#getValue()} returns the head element
  * (and removes it) once more than one sample has been buffered.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 @Component

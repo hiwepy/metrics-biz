@@ -24,7 +24,7 @@ package com.codahale.metrics.biz.event;
  * which buffers the values into a queue and registers a queue-driven
  * gauge against the metric registry.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see BizEvent
  * @see BizEventPoint

@@ -29,7 +29,7 @@ import com.codahale.metrics.servlets.MetricsServlet;
  * publish the application metrics at the default {@code /metrics}
  * endpoint.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 public class MetricsServletContextListener extends MetricsServlet.ContextListener {

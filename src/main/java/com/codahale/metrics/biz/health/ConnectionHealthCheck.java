@@ -29,7 +29,7 @@ import com.codahale.metrics.health.HealthCheck;
  * Note that the supplied {@code timeout} is captured for the validity
  * probe only and not for the underlying connection acquisition.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 public class ConnectionHealthCheck extends HealthCheck {

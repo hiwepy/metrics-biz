@@ -27,7 +27,7 @@ import com.codahale.metrics.health.HealthCheck;
  * {@link Database} implementation and this class turns the boolean
  * result into the appropriate Dropwizard {@link Result}.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 public class DatabaseHealthCheck extends HealthCheck {

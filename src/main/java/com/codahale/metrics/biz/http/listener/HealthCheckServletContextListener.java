@@ -32,7 +32,7 @@ import com.codahale.metrics.servlets.HealthCheckServlet;
  * thread pool} so that the {@code HealthCheckServlet} can dispatch
  * background probes without blocking the request thread.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see <a href="http://blog.csdn.net/bairrfhoinn/article/details/16848785">Original CSDN post</a>
  */

@@ -29,7 +29,7 @@ import com.codahale.metrics.biz.MetricsFactory;
  * path and the {@code created} / {@code destroyed} dimension so
  * consumers can plot per-application session lifecycle rates.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  */
 public class HttpSessionMetricsListener implements HttpSessionListener {

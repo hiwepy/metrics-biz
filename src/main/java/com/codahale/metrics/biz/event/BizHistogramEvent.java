@@ -25,7 +25,7 @@ package com.codahale.metrics.biz.event;
  * which forwards the sample to the underlying histogram via
  * {@code Histogram#update(long)}.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see BizEvent
  * @see BizEventPoint
