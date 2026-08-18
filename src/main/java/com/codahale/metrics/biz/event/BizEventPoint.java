@@ -10,7 +10,7 @@ import com.codahale.metrics.biz.utils.SystemClock;
  * 
  * @className	： BizEventPoint
  * @description	： 业务事件源数据
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author 		： <a href="https://github.com/easy-4-java">hiwepy</a>
  * @date		： 2017年6月9日 下午5:23:26
  * @version 	V1.0
  */

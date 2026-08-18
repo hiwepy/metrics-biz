@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationEvent;
  * 
  * @className	： BizEvent
  * @description	： 业务事件对象
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author 		： <a href="https://github.com/easy-4-java">hiwepy</a>
  * @date		： 2017年6月9日 下午5:23:12
  * @version 	V1.0 
  * @param <T>
