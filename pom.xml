@@ -61,8 +61,6 @@
                     <version>3.6.1</version>
                     <configuration>
                         <defaultLibBundleDir>lib</defaultLibBundleDir>
-                        <source>1.7</source>
-                        <target>1.7</target>
                         <!-- 字符集编码 -->
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <!-- 编译最大内存 -->
